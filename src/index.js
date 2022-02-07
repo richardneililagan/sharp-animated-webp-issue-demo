@@ -15,6 +15,9 @@ const app = async () => {
   try {
     await _sharpImage.metadata()
     console.debug('Metadata OK.')
+
+    await _sharpImage.toFile('out.webp')
+    console.debug('Save to file OK.')
   } catch (error) {
     console.error('Error:', error)
   }
@@ -26,6 +29,17 @@ const app = async () => {
   try {
     await _sharpImageAnimated.metadata()
     console.debug('Metadata OK.')
+  } catch (error) {
+    console.error('Error:', error)
+  }
+
+  console.log('\nAttempt to immediately write to disk:')
+
+  // :: Attempt to write image to disk right away
+  const _sharpImageAnimatedDeux = sharp(_imagePath, { animated: true })
+  try {
+    await _sharpImageAnimatedDeux.toFile('out_animated.webp')
+    console.debug('Save to file OK.')
   } catch (error) {
     console.error('Error:', error)
   }
