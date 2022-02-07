@@ -1,0 +1,14 @@
+{
+  "name": "sharp-animated-webp-metadata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Richard Neil Ilagan <705310+richardneililagan@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/index"
+  },
+  "dependencies": {
+    "sharp": "^0.30.0"
+  }
+}
